@@ -49,7 +49,7 @@ SequentialAnimation{
             PropertyAnimation {
                 target: wrapper
                 property: (icList.orientation == Qt.Vertical) ? "tempScaleWidth" : "tempScaleHeight"
-                to: taskItem.containsMouse ? root.zoomFactor : 1 + (0.65 * (root.zoomFactor-1))
+                to: taskItem.containsMouse ? 1.5 : 1 + (0.65 * (1.5-1))
                 duration: launcherAnimation.speed
                 easing.type: Easing.OutQuad
             }
@@ -151,7 +151,7 @@ SequentialAnimation{
     }
 
     function bounceLauncher(){
-        if(root.zoomFactor > 1){
+        if(true){
             taskItem.animationStarted();
             init();
             start();

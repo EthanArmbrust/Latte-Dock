@@ -40,7 +40,7 @@ SequentialAnimation{
             PropertyAnimation {
                 target: wrapper
                 property: (icList.orientation == Qt.Vertical) ? "tempScaleWidth" : "tempScaleHeight"
-                to: 1 + (thickPercentage * (root.zoomFactor-1))
+                to: 1 + (thickPercentage * (1.5-1))
                 duration: newWindowAnimation.speed
                 easing.type: Easing.OutQuad
 
@@ -118,7 +118,7 @@ SequentialAnimation{
 
     function bounceNewWindow(){
         //if (isDemandingAttention && !root.dockIsHidden && (root.zoomFactor > 1)){
-        if (!root.dockIsHidden && (root.zoomFactor > 1) && (root.durationTime>0) && !root.reverseLinesPosition){
+        if (!root.dockIsHidden){
             newWindowAnimation.init();
             start();
         }
